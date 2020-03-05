@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - release/*
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1.0.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1.2.0
+        with:
+          node-version: '10.x'
+
+      - name: install dependencies
+        run: npm install
+
+      - name: build
+        run: npm run build
+
+      - name: Autocommit builds
+        uses: EndBug/add-and-commit@v2.1.0
+        with:
+          message: "Autocommit builds"
+          path: "dist"
+          force: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
