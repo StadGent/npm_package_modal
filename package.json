@@ -1,0 +1,45 @@
+{
+  "name": "@digipolis-gent/modal",
+  "version": "1.0.0",
+  "description": "An accessible modal library as used by the gent_styleguide for the city of Ghent, Belgium.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --progress --colors --watch --mode=development",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StadGent/npm_package_modal.git"
+  },
+  "keywords": [
+    "modal",
+    "gent",
+    "ghent",
+    "a11y",
+    "accessible",
+    "wcag"
+  ],
+  "author": "Bart Delrue <bart.delrue@digipolis.gent>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/StadGent/npm_package_modal/issues"
+  },
+  "homepage": "https://github.com/StadGent/npm_package_modal#readme",
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "body-scroll-lock": "^2.6.4",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^3.0.3",
+    "path": "^0.12.7",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
