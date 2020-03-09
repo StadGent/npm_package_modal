@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     path: __dirname + '/dist',
-    filename: 'modal.js',
+    filename: 'index.js',
     library: 'Modal',
     libraryTarget: 'umd',
     umdNamedDefine: true
