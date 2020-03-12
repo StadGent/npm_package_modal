@@ -1,28 +1,36 @@
 # CONTRIBUTING
 
-Firstly, this library was created to go hand in hand with the [city of Ghent styleguide](https://stijlgids.stad.gent),
-so if you'd like to contribute in any way to this project, it might be of use to read the documentation to that project.
+Firstly, this library was created to go hand in hand with the
+[city of Ghent styleguide](https://stijlgids.stad.gent),
+so if you'd like to contribute in any way to this project,
+it might be of use to read the documentation to that project.
 
 ## Pull Request Process
 
-> :warning: When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
+> :warning: When contributing to this repository,
+>please first discuss the change you wish to make via issue,
+>email, or any other method with the owners of this repository before making a change.
 
-1. Document your changes inline in the code using [JSDoc 3](http://usejsdoc.org/). Update the README.md with details of changes to the interface.
+1. Document your changes inline in the code using [JSDoc 3](http://usejsdoc.org/).
+   Update the README.md with details of changes to the interface.
 2. Write tests if you add any new functionality. 
-2. Increase the version numbers in the `package.json` to the new version that this Pull Request would represent. The versioning scheme we use is [SemVer](https://semver.org/).
-3. You may merge the Pull Request in once you have the sign-off of at least one other developer, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
+2. Increase the version numbers in the `package.json` to the new version that this
+   Pull Request would represent. The versioning scheme we use is [SemVer](https://semver.org/).
+3. You may merge the Pull Request in once you have the sign-off of at least one other developer,
+   or if you do not have permission to do that, you may request the second reviewer to merge it for you.
 
 ## Release a new version
 
 ### Prerequisites
 
-* Have [git flow](https://github.com/nvie/gitflow) installed on your machine
-* Have `node` and `npm` installed on your machine (most preferably the latest version)
-* Write access for [@digipolis-gent/modal](https://www.npmjs.com/package/@digipolis-gent/modal)
+* Have [git flow](https://github.com/nvie/gitflow) installed on your machine.
+* Have `node` and `npm` installed on your machine (most preferably the latest version).
+* Write access for [@digipolis-gent/modal](https://www.npmjs.com/package/@digipolis-gent/modal).
 
 ### Git flow config
 
-We use the default git flow config. If you haven't already, run the following command to initialize git flow in your repository.
+We use the default git flow config. If you haven't already, run the following command to
+initialize git flow in your repository.
 
 ```bash
 git flow init -d
@@ -48,7 +56,8 @@ Before you start, make sure the changes you want to release are merged into the 
     npm --no-git-tag-version version [patch | minor | major]
     ```
 
-3. Change the `[Unreleased]` title in changelog to the `<newversion>` alongside the date. You can copy/adapt from previous versions.
+3. Change the `[Unreleased]` title in changelog to the `<newversion>` alongside the date.
+   You can copy/adapt from previous versions.
 
 4. Commit your changes
 
