@@ -8,7 +8,8 @@ module.exports = {
     filename: 'index.js',
     library: 'Modal',
     libraryTarget: 'umd',
-    umdNamedDefine: true
+    umdNamedDefine: true,
+    globalObject: 'this'
   },
   module: {
     rules: [
