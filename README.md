@@ -1,7 +1,8 @@
 # City of Ghent Modal
 
 This is a fully accessible modal library. 
-It includes a body scroll lock, tab trap, route events and aria-hidden for obscured contents.
+It includes a body scroll lock, tab trap,
+route events and aria-hidden for obscured contents.
 
 It was created to support the [City of Ghent styleguide](https://stijlgids.stad.gent).
 
