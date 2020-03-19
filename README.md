@@ -42,10 +42,11 @@ var modal = new Modal(element, options);
 
 The second parameter in the constructor is an options object.
 
-| property    | type     | default value | description                                                        |
-|-------------|----------|---------------|--------------------------------------------------------------------|
-| changeHash  | boolean  | true          | Possibility to alter the URL fragment when the modal opens/closes. |
-| resizeEvent | function |  undefined    | Add a user defined throttled resizeEvent.                          |
+| property     | type     | default value | description                                                        |
+|--------------|----------|---------------|--------------------------------------------------------------------|
+| changeHash   | boolean  | true          | Possibility to alter the URL fragment when the modal opens/closes. |
+| enableEscape | boolean  | true          | Allow closing the modal using the escape key.                      |
+| resizeEvent  | function | undefined     | Add a user defined throttled resizeEvent.                          |
 
 ### ResizeEvent
 
