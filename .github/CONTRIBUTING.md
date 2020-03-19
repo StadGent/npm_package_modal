@@ -72,7 +72,7 @@ Before you start, make sure the changes you want to release are merged into the 
     ```
     *When prompted, provide the `<newversion>` as a message for the git tag.*
 
-4. Push changes to the remote
+6. Push changes to the remote
 
     ```bash
     git push --follow-tags
