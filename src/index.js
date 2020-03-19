@@ -18,6 +18,10 @@ export default function Modal (modal, options) {
     options.changeHash = true;
   }
 
+  if (typeof options.enableEscape === 'undefined') {
+    options.enableEscape = true;
+  }
+
   let triggers = [];
   let activeTrigger;
   let hash;
@@ -191,8 +195,10 @@ export default function Modal (modal, options) {
         }
         break;
       case 27: // esc
-        e.preventDefault();
-        handleClose();
+        if (options.enableEscape) {
+          e.preventDefault();
+          handleClose();
+        }
         break;
     }
   };
