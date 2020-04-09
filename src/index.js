@@ -141,7 +141,8 @@ export default function Modal (modal, options) {
     if (activeTrigger) {
       activeTrigger.setAttribute('aria-expanded', 'true');
     }
-    modal.focus();
+
+    requestAnimationFrame(() => requestAnimationFrame(() => modal.focus()));
   };
 
   /**
