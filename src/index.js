@@ -142,6 +142,10 @@ export default function Modal (modal, options) {
       activeTrigger.setAttribute('aria-expanded', 'true');
     }
 
+    /**
+     * Skip one animationFrame before placing the focus on the modal.
+     * To make absolutely sure the modal is in the right position before focusing.
+     */
     requestAnimationFrame(() => requestAnimationFrame(() => modal.focus()));
   };
 
