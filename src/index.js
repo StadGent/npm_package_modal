@@ -175,7 +175,9 @@ export default function Modal (modal, options) {
     parent.insertBefore(modal, nextSibling);
     if (activeTrigger) {
       activeTrigger.setAttribute('aria-expanded', 'false');
-      activeTrigger.focus();
+      if (!location.hash) {
+        activeTrigger.focus();
+      }
     }
   };
 
