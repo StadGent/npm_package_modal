@@ -1,11 +1,8 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
-  entry: __dirname + '/src/index.js',
   devtool: 'source-map',
   output: {
-    path: __dirname + '/dist',
-    filename: 'index.js',
     library: 'Modal',
     libraryTarget: 'umd',
     umdNamedDefine: true,
@@ -31,6 +28,7 @@ module.exports = {
     ]
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin()]
-  }
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
 };
