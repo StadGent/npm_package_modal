@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.4] - 2022-01-20
 
 - Skip one animationFrame before placing the focus on the modal.
+- Add support for node 18.
+- Fix security issues.
 
 ## [1.0.3] - 2020-08-17
 
