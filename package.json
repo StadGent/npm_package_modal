@@ -1,6 +1,6 @@
 {
   "name": "@digipolis-gent/modal",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An accessible modal library as used by the gent_styleguide for the city of Ghent, Belgium.",
   "main": "dist/index.js",
   "scripts": {
