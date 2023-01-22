@@ -1,24 +1,26 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-  entry: __dirname + '/src/index.js',
   devtool: 'source-map',
   output: {
-    path: __dirname + '/dist',
-    filename: 'index.js',
-    library: 'Modal',
-    libraryTarget: 'umd',
+    library: {
+      name: 'Modal',
+      type: 'umd',
+    },
     umdNamedDefine: true,
     globalObject: 'this'
   },
+  plugins: [
+    new ESLintPlugin({
+      extensions: ['.js'],
+      exclude: [
+        '/node_modules/'
+      ],
+    })
+  ],
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-      },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
@@ -31,6 +33,7 @@ module.exports = {
     ]
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin()]
-  }
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
 };
