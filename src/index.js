@@ -25,9 +25,8 @@ export default function Modal (modal, options) {
   let triggers = [];
   let activeTrigger;
   let hash;
-  let nextSibling;
-  let parent;
   let parentModal;
+  let placeholder;
 
   /**
    * A Gent styleguide class to create a tabTrap.
@@ -40,8 +39,8 @@ export default function Modal (modal, options) {
    */
   const init = () => {
     triggers = document.querySelectorAll(`[aria-controls="${modal.id}"], [href="#${modal.id}"]`);
-    nextSibling = modal.nextElementSibling;
-    parent = modal.parentElement;
+    const placeholder = document.createComment(`modal-placeholder-${modal.id}`);
+    modal.parentElement.insertBefore(placeholder, modal);
 
     if (!options.changeHash && triggers.length === 0) {
       return;
@@ -119,10 +118,9 @@ export default function Modal (modal, options) {
     }
 
     parentModal = document.querySelector('body > [data-gent-modal]');
-    if (parentModal) {
+    if (parentModal && parentModal !== modal) {
       document.body.replaceChild(modal, parentModal);
-    }
-    else {
+    } else if (!document.body.contains(modal)) {
       document.body.appendChild(modal);
     }
 
@@ -172,7 +170,10 @@ export default function Modal (modal, options) {
       document.removeEventListener('keydown', handleKeyboardInput);
     }
 
-    parent.insertBefore(modal, nextSibling);
+    if (placeholder && placeholder.parentNode) {
+      placeholder.parentNode.insertBefore(modal, placeholder.nextSibling);
+      placeholder.parentNode.removeChild(placeholder);
+    }
     if (activeTrigger) {
       activeTrigger.setAttribute('aria-expanded', 'false');
       if (!location.hash) {
